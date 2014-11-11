@@ -17,3 +17,10 @@ Route::get('/', function()
 	var_dump($todolist->name);
 	//return View::make('hello');
 });
+
+Route::get('/todolists', function()
+{
+	$todolists = TodoList::all();
+	foreach($todolists as $todolist)
+		echo $todolist->name . "<br />";
+});
